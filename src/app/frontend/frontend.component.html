@@ -1,0 +1,12 @@
+<div class="gallery-container">
+    <div *ngFor="let obj of myfrontendInterface" class="gallery-item">
+      <img class="listing-img" [src]="obj.photo" alt="{{ obj.name }}" />
+      <h4 class="listing-heading">{{ obj.name }}</h4>
+      <p>{{ obj.text }}</p>
+     
+    </div>
+  </div>
+
+
+
+  <!-- https://angular-test.free.beeceptor.com/gallery -->

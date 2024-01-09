@@ -1,0 +1,76 @@
+<div class="b-body">
+  <div class="signup_container">
+    <div class="signUp-form">
+      <h2>SignUp Page</h2>
+      <div class="signUp-div-container">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          id="name"
+          #textName
+          name="name"
+          placeholder="Enter your name"
+        />
+      </div>
+
+      <div class="signUp-div-container">
+        <label for="lastname">Last Name </label>
+        <input
+          type="text"
+          id="lastname"
+          #textlastName
+          name="lastname"
+          placeholder="Enter your last name"
+        />
+      </div>
+
+      <div class="signUp-div-container">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          #textEmail
+          name="email"
+          placeholder="Enter your email"
+        />
+      </div>
+
+      <div class="signUp-div-container">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          #textPassword
+          name="password"
+          placeholder="Enter your password"
+        />
+      </div>
+      <div class="signUp-div-container">
+        <button
+          (click)="sendForm()"
+          *ngIf="!isCallingAPI; else loading"
+          type="submit"
+        >
+          Sign Up
+        </button>
+
+        <ng-template #loading>
+          <div class="loader"></div>
+        </ng-template>
+        <p>
+          Aleady have an account?
+
+          <span (click)="onLoginRedierect()">Log in.</span>
+        </p>
+      </div>
+<!-- <p>{{}}</p> -->
+      <!-- ---------------------------- -->
+      <div class="alert" *ngIf="isSubmitted">
+        <p>{{ name }}</p>
+        <p>{{ email }}</p>
+        <p>{{ lastname }}</p>
+        <p>{{ password }}</p>
+      </div>
+    </div>
+  </div>
+</div>
