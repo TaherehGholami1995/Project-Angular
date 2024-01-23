@@ -57,7 +57,7 @@ export class SignupComponent implements OnInit {
           this.isCallingAPI = false;
         },
         (error) => {
-          console.log('server massage: ', error);
+          console.log('server massage error: ', error);
           this.isCallingAPI = false;
         }
       );

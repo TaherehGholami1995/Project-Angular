@@ -1,12 +1,16 @@
 <div class="gallery-container">
-    <div *ngFor="let obj of myfrontendInterface" class="gallery-item">
-      <img class="listing-img" [src]="obj.photo" alt="{{ obj.name }}" />
-      <h4 class="listing-heading">{{ obj.name }}</h4>
-      <p>{{ obj.text }}</p>
-     
+  <div *ngFor="let a of photos | async" class="gallery-item">
+    <img class="listing-img" [src]="a.url" />
+    <p class="listing-heading">{{ a.title }}</p>
+
+    <div class="star-icon" [ngStyle]="{ 'width.px': (a.numberStar * 90) / 5 }">
+      <div style="width: 90px">
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+        <i class="fa-solid fa-star"></i>
+      </div>
     </div>
   </div>
-
-
-
-  <!-- https://angular-test.free.beeceptor.com/gallery -->
+</div>

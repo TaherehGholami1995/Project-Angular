@@ -8,12 +8,16 @@ import { ArticlesInterface } from '../models/articles.model';
   providedIn: 'root',
 })
 export class ArticlesService {
-  private api: string = 'https://jsonplaceholder.typicode.com/posts';
+  
+   private api: string = 'https://jsonplaceholder.typicode.com/posts';
+
+ 
 
   constructor(private http: HttpClient) {}
 
   getArticles(): Observable<ArticlesInterface[]> {
     return this.http.get(this.api) as Observable<ArticlesInterface[]>;
+
 
   }
 }

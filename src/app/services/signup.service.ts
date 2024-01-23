@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { APP_ID, Injectable } from '@angular/core';
 import {
   SignupInterface,
   SignupFeedbackInterface,
@@ -10,17 +10,23 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class SignupService {
-  api: string = 'https://angular-test.free.beeceptor.com/api/contact-form';
+  // api: string = 'https://angular-test.free.beeceptor.com/api/contact-form';
 
+  api: string = 'https://tahereh.free.beeceptor.com/api/contact-form';
 
   constructor(private http: HttpClient) {}
 
   sendSignupForm(data: SignupInterface): Observable<SignupFeedbackInterface> {
-   return this.http.post(this.api, data)as Observable<SignupFeedbackInterface>;
-
+    return this.http.post(
+      this.api,
+      data
+    ) as Observable<SignupFeedbackInterface>;
   }
-
-  // sendSignupForm(data: SignupInterface) {
-  //   this.http.post(this.api, data);
-  // }
 }
+
+
+
+// api 
+// {
+//   "message": "successfully registered"
+// }

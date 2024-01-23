@@ -20,5 +20,8 @@ export class ArticlesComponent implements OnInit {
   ngOnInit(): void {
     this.articles = this.service.getArticles();
 
+
+    
+
   }
 }
